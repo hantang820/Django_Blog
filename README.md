@@ -1,1 +1,1 @@
-# Django_Blog
+# 독서 블로그
