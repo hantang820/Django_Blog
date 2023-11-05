@@ -1,8 +1,6 @@
 <p>{{post.title}}</p>
 <p>{{post.content}}</p>
-<p>작성 날짜: {{ post.updated_at }}</p>
-<p>작성자: {{ post.author.username }}</p>
-<p>조회수 : {{post.view_count}}</p>
+<p>{{ post.author.username }} | {{ post.created_at|date:"Y.m.d" }} | 조회수: {{post.view_count}}</p>
 {% if post.file_upload %}
 <video src="{{post.file_upload.url}}" controls></video>
 {% endif %}
@@ -10,19 +8,23 @@
 <hr>
 <section>
     <h3>댓글</h3>
-    {% for comment in post.comments.all %}
-        <p>{{comment.message}}</p>
-        <p>{{comment.author}}</p>
-        <p>{{comment.updated_at}}</p>
-    {% endfor %}
+    <ul class="detail-comments">
+        {% for comment in post.comments.all %}
+        <li class="user-comment"> {{ comment.message }} <br> {{ comment.author }} {{ comment.created_at|date:"Y.m.d" }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% if post.comments.all.count < 1 %}
+    <p>댓글이 없습니다.</p>
+    {% endif %}
 </section>
 
 <section>
-    <h3>댓글 작성</h3>
     <form action="{% url 'reading_blog:comment_new' post.pk %}" method="post">
         {% csrf_token %}
-        {{ comment_form.as_p }}
-        <input type="submit" value="댓글 작성">
+        <label for="{{ comment_form.message.id_for_label }}"></label>
+        {{ comment_form.message }}
+        <input type="submit" value="댓글 등록">
     </form>
 </section>
 

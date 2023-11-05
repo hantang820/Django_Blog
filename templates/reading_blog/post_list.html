@@ -1,20 +1,46 @@
 <h1>글목록</h1>
 
-<ul>
+<table class="table table-bordered mt-2">
+    <thead class="table-light">
+            {% if post_list %}
+            <tr>
+                <td>No.</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+            </tr>
+        </thead>
+<tbody>
     {% for post in post_list %}
-    <li>
-        <a href="{% url 'reading_blog:post_detail' post.pk %}">
-            {{ post.title }} {{ post.author.username }} {{ post.updated_at }}
-        </a>
-    </li>
+    <tr>
+        <td>
+            {{ post.id }}
+        </td>
+        <td>
+            <a href="{% url 'reading_blog:post_detail' pk=post.pk %}" class="btn">{{ post.title }}</a>
+            <!-- 댓글 개수 표시 -->
+            {% if post.comments.count > 0 %}
+            <span class="text-success small ml-2">{{ post.comments.count }}</span>
+            {% endif %}
+        </td>
+        <td>{{ post.author.username }}</td>
+        <td>{{ post.created_at|date:"Y.m.d" }}</td>
+        <td>{{ post.hit }}</td>
+    </tr>
     {% endfor %}
-</ul>
+</tbody>
+</table>
+
+{% else %}
+<p>작성된 게시글이 없습니다.</p>
+{% endif %}
 
 <form action="" method="GET">
     <input type="text" name="q" value="{{ request.GET.q }}">
     <input type="submit" value="검색">
 </form>
 
+<a href="{% url 'main:index' %}">메인</a>
 <a href="{% url 'reading_blog:post_new' %}">업로드</a>
 {% if user.is_authenticated %}
 <a href="{% url 'accounts:logout' %}">로그아웃</a>
