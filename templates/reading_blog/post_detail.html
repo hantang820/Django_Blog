@@ -11,6 +11,9 @@
 {% if post.file_upload %}
 <video src="{{post.file_upload.url}}" controls></video>
 {% endif %}
+{% if post.image_upload %}
+<img src="{{post.image_upload.url}}" controls></img>
+{% endif %}
 
 <hr>
 <section>

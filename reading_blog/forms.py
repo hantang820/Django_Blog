@@ -4,7 +4,7 @@ from .models import Post, Comment, Tag
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', 'thumb_image', 'file_upload', 'tags']
+        fields = ['title', 'content', 'thumb_image', 'file_upload', 'image_upload', 'tags']
     tags = forms.ModelMultipleChoiceField(
         queryset=Tag.objects.all(),
         widget=forms.CheckboxSelectMultiple,

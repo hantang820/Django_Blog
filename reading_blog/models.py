@@ -9,6 +9,7 @@ class Post(models.Model):
     content = models.TextField()
     thumb_image = models.ImageField(
         upload_to='reading_blog/images/%Y/%m/%d/', blank=True)
+    image_upload = models.ImageField(upload_to='blog/%Y/%m/%d/', blank=True, null=True)
     file_upload = models.FileField(
         upload_to='reading_blog/files/%Y/%m/%d/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
