@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render
 from django.views.generic import ListView, DeleteView, UpdateView, DetailView, CreateView
 from .models import Post, Comment
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, TagForm
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
@@ -92,3 +92,7 @@ def comment_new(request, pk):
     return render(request, 'reading_blog/form.html', {
         'form': form,
     })
+
+def posttag(request, tag):
+    posts = Post.objects.filter(tags__name__iexact=tag)
+    return render(request, 'blog/postlist.html', {'posts':posts})

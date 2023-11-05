@@ -1,8 +1,8 @@
 <h1>독서 블로그</h1>
 
+<a href="{% url 'reading_blog:post_list' %}">블로그 입장하기</a>
 <a href="{% url 'accounts:signup' %}">회원가입</a>
 <a href="{% url 'accounts:login' %}">로그인</a>
-<a href="{% url 'reading_blog:post_list' %}">블로그 입장하기</a>
 
 {% if user.is_authenticated %}
 <a href="{% url 'accounts:logout' %}">로그아웃</a>

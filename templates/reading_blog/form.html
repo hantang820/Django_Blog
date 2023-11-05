@@ -2,6 +2,7 @@
     {% csrf_token %}
     <table>
         {{ form.as_table }}
+        {{ tag_form.as_table }}
     </table>
-    <input type="submit" value="Submit">
+    <input type="submit" value="글작성">
 </form>
