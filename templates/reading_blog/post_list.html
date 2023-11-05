@@ -4,18 +4,15 @@
     <thead class="table-light">
             {% if post_list %}
             <tr>
-                <td>No.</td>
-                <td>제목</td>
-                <td>작성자</td>
-                <td>작성일</td>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
             </tr>
         </thead>
 <tbody>
     {% for post in post_list %}
     <tr>
-        <td>
-            {{ post.id }}
-        </td>
         <td>
             <a href="{% url 'reading_blog:post_detail' pk=post.pk %}" class="btn">{{ post.title }}</a>
             {% if post.comments.count > 0 %}
@@ -24,7 +21,7 @@
         </td>
         <td>{{ post.author.username }}</td>
         <td>{{ post.created_at|date:"Y.m.d" }}</td>
-        <td>{{ post.hit }}</td>
+        <td>{{post.view_count}}</td>
     </tr>
     {% endfor %}
 </tbody>
