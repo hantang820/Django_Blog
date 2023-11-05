@@ -93,6 +93,7 @@ def comment_new(request, pk):
         'form': form,
     })
 
+
 def posttag(request, tag):
     posts = Post.objects.filter(tags__name__iexact=tag)
     return render(request, 'blog/postlist.html', {'posts':posts})

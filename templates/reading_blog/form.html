@@ -1,8 +1,24 @@
+<h1>글작성</h1>
+
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
-        {{ form.as_table }}
-        {{ tag_form.as_table }}
+        <tr>
+            <td>제목</td>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td>{{ form.content }}</td>
+        </tr>
+        <tr>
+            <td>이미지 업로드</td>
+            <td>{{ form.image_upload }}</td>
+        </tr>
+        <tr>
+            <td>태그</td>
+            <td>{{ form.tags }}</td>
+        </tr>
     </table>
-    <input type="submit" value="글작성">
+    <input type="submit" value="등록">
 </form>
