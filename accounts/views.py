@@ -10,12 +10,12 @@ def signup_success(request):
 
 signup = CreateView.as_view(
     form_class = UserCreationForm,
-    template_name = 'accounts/form.html',
+    template_name = 'accounts/signup.html',
     success_url = '/accounts/signup_success/',
 )
 
 login = LoginView.as_view(
-    template_name = 'accounts/form.html',
+    template_name = 'accounts/login.html',
     next_page = '/'
 )
 
