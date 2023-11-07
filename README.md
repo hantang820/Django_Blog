@@ -157,17 +157,19 @@
 #### 메인페이지
 - 로그인 전
 <img src="https://github.com/hantang820/Django_Blog/assets/142385695/42438640-bee9-497e-8860-f0de6c36562e" width="100%">
+
 - 로그인 후 
 <img src="https://github.com/hantang820/Django_Blog/assets/142385695/03742dc9-36aa-4308-9365-44a90cbf6a09" width="100%">
 
 #### 회원가입
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/78c018e2-b688-4a43-957f-bf2dc2644d08)
+![회원가입](https://github.com/hantang820/Django_Blog/assets/142385695/103ca953-851e-4ff0-9bf5-dd15231cff43)
 
 #### 로그인
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/a42d1b55-3f65-4e5b-9565-ae498cdb6171)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/02d24062-6727-4c8f-812c-d48336fdc502)
 
 #### 게시글 작성
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/916eadce-bfda-4704-a0ca-c1fb74789a5c)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/ab95da1f-0bb0-49ee-aff1-cf3b9eeebe14)
+
 
 #### 게시글 목록
 <img src="https://github.com/hantang820/Django_Blog/assets/142385695/468cca70-4d3e-46ca-8f18-89ac480a5d95" width="100%">
@@ -176,26 +178,28 @@
 - 글에 댓글이 작성되었을 경우엔 제목 옆에 댓글의 수가 표시됨
 
 #### 게시글 상세보기
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/4f75df62-f190-421a-861e-6beb3ca11294)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/63aada23-1649-4b84-82c0-fc977fea2244)
 
 #### 게시글 수정
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/63bf760c-3e2e-4f45-b4e4-acdf302a963b)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/fcfd28b7-48d8-42d4-8cc1-e27485930c2d)
 
 #### 게시글 삭제
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/9e316c39-4653-4549-8970-26f63cc13da5)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/1784cac5-30bd-4ed6-89b5-527fc3eb644e)
 - 게시글 삭제 확인을 위한 페이지에서 아니요를 누르면 글목록으로 돌아감
 
 #### 게시글 검색
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/14eaaefe-160a-4f36-8dec-0e8c60c2edb8)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/d02d3afc-3c18-40d0-8d3c-4bad53d790e3)
 
 #### 같은 태그의 게시글 모아보기
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/40e460f9-00d0-4fca-b155-678cd0d7810d)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/64b22b75-c322-4229-b16c-a3e4b51b7278)
+
 - 글에 있는 태그를 눌러서 같은 태그를 가진 글들을 모아볼 수 있음
 
 ### 6-2. 로그인/회원가입 기능을 이용하기
 
 #### 로그인을 한 사용자만 게시글 작성 가능
-![gif](https://github.com/hantang820/Django_Blog/assets/142385695/53debe8b-1d7a-413a-85ef-5af28d32b0c0)
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/b0b03116-7071-4723-af61-6155ee3ef2ba)
+
 - 로그인 상태로 블로그에 접속해야 글 작성 버튼 활성화
 
 #### 본인이 작성한 게시글일 때만 수정/삭제 가능
