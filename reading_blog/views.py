@@ -96,4 +96,4 @@ def comment_new(request, pk):
 
 def posttag(request, tag):
     posts = Post.objects.filter(tags__name__iexact=tag)
-    return render(request, 'blog/postlist.html', {'posts':posts})
+    return render(request, 'reading_blog/post_list.html', {'post_list': posts, 'tag': tag})

@@ -1,24 +1,45 @@
-<h1>글작성</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>제목</td>
-            <td>{{ form.title }}</td>
-        </tr>
-        <tr>
-            <td>내용</td>
-            <td>{{ form.content }}</td>
-        </tr>
-        <tr>
-            <td>이미지 업로드</td>
-            <td>{{ form.image_upload }}</td>
-        </tr>
-        <tr>
-            <td>태그</td>
-            <td>{{ form.tags }}</td>
-        </tr>
-    </table>
-    <input type="submit" value="등록">
-</form>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h4>글 작성</h4>
+            <hr>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    <label for="id_title" class="col-sm-2 col-form-label text-info"><h6>제목</h6></label>
+                    <div>
+                        {{ form.title }}
+                    </div>
+                
+                
+                    <label for="id_content" class="col-sm-2 col-form-label text-info"><h6>내용</h6></label>
+                    <div>
+                        {{ form.content }}
+                    </div>
+                    <hr>
+        
+                    <label for="id_image_upload" class="col-sm-2 col-form-label text-info"><h6>이미지 업로드</h6></label>
+                    <div>
+                        {{ form.image_upload }}
+                    </div>
+
+                    <hr>
+                    <label for="id_tags" class="text-info"><h6>태그</h6></label>
+                    <div class="form-check form-check-inline">
+                        {% for tag in form.tags %}
+                        {{ tag }}
+                        {% endfor %} </div>
+                <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btn-info" style="float: right;">등록</button>
+    </div>
+</div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

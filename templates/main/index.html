@@ -1,9 +1,20 @@
-<h1>독서 블로그</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<a href="{% url 'reading_blog:post_list' %}">블로그 입장하기</a>
-<a href="{% url 'accounts:signup' %}">회원가입</a>
-<a href="{% url 'accounts:login' %}">로그인</a>
+<div class="container mt-4 text-center">
+    <img class="photo" src="../static/asset/main_img.jpg" alt="메인이미지" style="width: 400px; height: auto;">
+    <h6 class="text-info">📝오늘 읽은 책의 감상과 후기를 남길 수 있는 블로그 오늘의 책입니다📝</h6>
+    <div class="btn-row" style="margin-top: 65px; margin-bottom: 25px;">
+        <a href="{% url 'reading_blog:post_list' %}" class="btn btn-info">블로그 입장하기</a>
+    </div>
+    <div class="btn-row">
+        <a href="{% url 'accounts:signup' %}" class="btn btn-secondary">회원가입</a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-secondary">로그인</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'accounts:logout' %}" class="btn btn-secondary">로그아웃</a>
+        {% endif %}
+    </div>
+</div>
 
-{% if user.is_authenticated %}
-<a href="{% url 'accounts:logout' %}">로그아웃</a>
-{% endif %}
+{% endblock %}

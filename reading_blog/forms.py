@@ -2,9 +2,9 @@ from django import forms
 from .models import Post, Comment, Tag
 
 class PostForm(forms.ModelForm):
-    title = forms.CharField(label="제목", max_length=100)
-    content = forms.CharField(label="내용", widget=forms.Textarea)
-    image_upload = forms.ImageField(label="이미지 업로드", required=False)
+    title = forms.CharField(label="제목", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    content = forms.CharField(label="내용", widget=forms.Textarea(attrs={'class': 'form-control'}))
+    image_upload = forms.ImageField(label="이미지 업로드", required=False, widget=forms.ClearableFileInput(attrs={'class': 'form-control'}))
     tags = forms.ModelMultipleChoiceField(
         queryset=Tag.objects.all(),
         widget=forms.CheckboxSelectMultiple,
@@ -12,7 +12,7 @@ class PostForm(forms.ModelForm):
     
     class Meta:
         model = Post
-        fields = ['title', 'content', 'file_upload', 'thumb_image', 'image_upload', 'tags']
+        fields = ['title', 'content', 'image_upload', 'tags']
 
 class CommentForm(forms.ModelForm):
     class Meta:

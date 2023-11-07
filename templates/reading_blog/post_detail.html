@@ -1,45 +1,76 @@
-<p>{{post.title}}</p>
-<p>{{ post.author.username }} | {{ post.created_at|date:"Y.m.d" }} | 조회수: {{post.view_count}}</p>
-<p>{{post.content}}</p>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<p>태그: 
-    {% for tag in post.tags.all %}
-        <a href="{% url 'reading_blog:posttag' tag.name %}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
-    {% endfor %}
-    </p>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{ post.title }}</h4>
+            <hr>
+            <p class="card-text">
+                <small class="text-muted">
+                    작성자: {{ post.author.username }} | 작성일: {{ post.created_at|date:"Y.m.d" }} | 조회수: {{ post.view_count }}
+                </small>
+            </p>
+            <p class="card-text" style="font-size: 1.0em;">
+                {{ post.content }}
+            </p>
+        
+            {% if post.image_upload %}
+                <img src="{{ post.image_upload.url }}" class="img-fluid" alt="Image" style="max-width: 60%; height: auto;">
+            {% endif %}
+            
+            <hr>
+            <p class="card-text">
+                <small>
+                    {% for tag in post.tags.all %}
+                        <a href="{% url 'reading_blog:posttag' tag.name %}" style="color: #999;">#{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </small>
+            </p>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <h5 class="text-info">댓글</h5>
+        <ul class="list-group">
+            {% for comment in post.comments.all %}
+                <li class="list-group-item">
+                    {{ comment.message }}
+                    <br>
+                    <small class="text-muted">
+                        {{ comment.author }} | {{ comment.created_at|date:"Y.m.d" }}
+                    </small>
+                </li>
+            {% endfor %}
+        </ul>
 
-{% if post.file_upload %}
-<video src="{{post.file_upload.url}}" controls></video>
-{% endif %}
-{% if post.image_upload %}
-<img src="{{post.image_upload.url}}" controls></img>
-{% endif %}
+        {% if post.comments.all.count < 1 %}
+            <p>댓글이 없습니다.</p>
+        {% endif %}
+    </div>
+    
+    <div class="mt-4">
+        <form action="{% url 'reading_blog:comment_new' post.pk %}" method="post" style="width: 100%;">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col">
+                    <textarea name="message" class="form-control" rows="3" placeholder="댓글을 입력하세요" required id="id_message"></textarea>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-info" style="float: right;">댓글 등록</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
-<hr>
-<section>
-    <h3>댓글</h3>
-    <ul class="detail-comments">
-        {% for comment in post.comments.all %}
-        <li class="user-comment"> {{ comment.message }} <br> {{ comment.author }} {{ comment.created_at|date:"Y.m.d" }}
-        </li>
-        {% endfor %}
-    </ul>
-    {% if post.comments.all.count < 1 %}
-    <p>댓글이 없습니다.</p>
-    {% endif %}
-</section>
+    <div class="text-left mt-4">
+        <a href="{% url 'reading_blog:post_list' %}" class="btn btn-secondary">목록</a>
+        {% if user == post.author %}
+            <a href="{% url 'reading_blog:post_edit' post.pk %}" class="btn btn-secondary">수정</a>
+            <a href="{% url 'reading_blog:post_delete' post.pk %}" class="btn btn-secondary">삭제</a>
+        {% endif %}
+    </div>
+</div>
 
-<section>
-    <form action="{% url 'reading_blog:comment_new' post.pk %}" method="post">
-        {% csrf_token %}
-        <label for="{{ comment_form.message.id_for_label }}"></label>
-        {{ comment_form.message }}
-        <input type="submit" value="댓글 등록">
-    </form>
-</section>
-
-<a href="{% url 'reading_blog:post_list' %}">목록</a>
-{% if user == post.author %}
-<a href="{% url 'reading_blog:post_edit' post.pk %}">수정</a>
-<a href="{% url 'reading_blog:post_delete' post.pk %}">삭제</a>
-{% endif %}
+{% endblock %}

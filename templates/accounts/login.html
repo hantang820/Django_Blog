@@ -1,9 +1,23 @@
-<h1>로그인</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="로그인">
-</form>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body text-center">
+            <h4>로그인</h4>
+            <hr>
+            <form style="margin-top: 70px; margin-bottom: 70px;" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="mx-auto">
+                    {{ form.as_table }}
+                </table>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-info">로그인</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

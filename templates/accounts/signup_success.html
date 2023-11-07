@@ -1,5 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
+<div class="container-fluid mt-4 mb-4">
+    <div class="card">
+        <div class="card-body text-center">
+                {% csrf_token %}
+                <h4 style="margin-top: 40px; margin-bottom: 60px;">회원가입이 성공적으로 완료되었습니다</h4>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="{% url 'accounts:login' %}" class="btn btn-secondary">로그인</a>
+                </div>
+        </div>
+    </div>
+</div>
 
-<p>회원가입이 성공적으로 완료되었습니다.</p>
-
-<a href="{% url 'accounts:login' %}">로그인</a>
+{% endblock %}
