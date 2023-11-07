@@ -35,7 +35,7 @@
         <h5 class="text-info">댓글</h5>
         <ul class="list-group">
             {% for comment in post.comments.all %}
-                <li class="list-group-item">
+                <li class="list-group-item"  style="font-size: 0.9em; margin-top: 5px; margin-bottom: 5px;">
                     {{ comment.message }}
                     <br>
                     <small class="text-muted">

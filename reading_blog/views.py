@@ -26,7 +26,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     success_url = reverse_lazy('reading_blog:post_list')
-    template_name = 'reading_blog/form.html'
+    template_name = 'reading_blog/post_write.html'
 
     def form_valid(self, form):
         video = form.save(commit=False)
@@ -58,7 +58,7 @@ class PostUpdate(UserPassesTestMixin, UpdateView):
     model = Post
     form_class = PostForm
     success_url = reverse_lazy('reading_blog:post_list')
-    template_name = 'reading_blog/form.html'
+    template_name = 'reading_blog/post_write.html'
 
     def test_func(self):
         return self.get_object().author == self.request.user
@@ -89,7 +89,7 @@ def comment_new(request, pk):
             return redirect('reading_blog:post_detail', pk)
     else:
         form = CommentForm()
-    return render(request, 'reading_blog/form.html', {
+    return render(request, 'reading_blog/post_write.html', {
         'form': form,
     })
 
