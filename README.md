@@ -144,9 +144,18 @@
 ## 4. UI
 
 | | |
-|-|-|
-|<img alt="image" src="https://github.com/hantang820/Django_Blog/assets/142385695/4fabd0f0-5ddc-46be-92d0-1a15f3bdef81" width="100%" >
+|:-:|:-:|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/4fabd0f0-5ddc-46be-92d0-1a15f3bdef81" width="100%">메인페이지_로그인X|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/d1777935-6742-4d0f-90dc-9d403e0844b2" width="100%"> 메인페이지_로그인O|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/2b25b4e6-c332-4bc7-b6b9-156a03e1224d" width="100%">회원가입|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/d64ad494-e6e2-47e5-b2ab-2e1ec8183653" width="100%">회원가입 성공|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/8ef5062a-8b0b-4817-a34f-d2d2dad69ff2" width="100%"> 로그인|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/b207ddc2-0585-400f-a035-1eec5b5f19d4" width="100%">글목록|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/04f652c3-76f1-46d9-a383-4fe41bd062f3" width="100%">글작성|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/15f4ef89-61f7-47b1-a4e6-cea064c017a2" width="100%">글삭제|
 
+| |
+|:-:|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/551f6e07-82d2-4521-b7c0-fe89f2bb0875" width="80%"> 
+글 상세보기_댓글X 본인글O|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/47662b9c-d3eb-4e1e-8fac-ea36a81d70bf" width="80%"> 
+글 상세보기_댓글O 본인글X|
 
 ## 5. 데이터베이스 모델링(ERD)
 ## 6. 기능
