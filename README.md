@@ -1,23 +1,21 @@
 # 독서 블로그
+책을 읽고 책에 대한 감상을 나눌 수 있는 블로그입니다.
 
 ## 목차
 [1. 목표와 기능](#1-목표와-기능)<br>
 [2. 개발 기술 및 환경](#2-개발-기술-및-환경)<br>
 [3. 프로젝트 구조와 개발 일정](#3-프로젝트-구조와-개발-일정)<br>
-[4. URL 구조](#4-url-구조)<br>
-[5. UI](#5-ui)<br>
-[6. 데이터베이스 모델링(ERD)](#6-데이터베이스-모델링erd)<br>
-[7. 기능](#7-기능)<br>
-[8. 개발하며 느낀 점](#8-개발하며-느낀-점)<br>
+[4.UI](#4-ui)<br>
+[5. 데이터베이스 모델링(ERD)](#5-데이터베이스-모델링erd)<br>
+[6. 기능](#6-기능)<br>
+[7. 개발하며 느낀 점](#7-개발하며-느낀-점)<br>
 
 ## 1. 목표와 기능
  ### 1-1. 목표
- -
- -
+ - 읽은 책에 대한 감상을 나눌 수 있는 블로그
  ### 1-2. 기능
- -
- -
- -
+ - 원하는 장르의 책을 찾아볼 수 있도록 태그 기능 추가
+ - 다양한 의견을 나눌 수 있도록 댓글 기능 추가
 ## 2. 개발 기술 및 환경
  ### 2-1. 개발 기술
 
@@ -139,24 +137,72 @@
  
  ### 3-3. 개발 일정(WBS)
 
-<img src = "https://user-images.githubusercontent.com/142385695/281078349-d9e17541-0309-4783-b5d1-83803d9fbdf2.png" width="80%">
+<img src="https://user-images.githubusercontent.com/142385695/281078349-d9e17541-0309-4783-b5d1-83803d9fbdf2.png" width="80%">
 
 ## 4. UI
 
 | | |
 |:-:|:-:|
-|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/4fabd0f0-5ddc-46be-92d0-1a15f3bdef81" width="100%">메인페이지_로그인X|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/d1777935-6742-4d0f-90dc-9d403e0844b2" width="100%"> 메인페이지_로그인O|
-|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/2b25b4e6-c332-4bc7-b6b9-156a03e1224d" width="100%">회원가입|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/d64ad494-e6e2-47e5-b2ab-2e1ec8183653" width="100%">회원가입 성공|
-|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/8ef5062a-8b0b-4817-a34f-d2d2dad69ff2" width="100%"> 로그인|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/b207ddc2-0585-400f-a035-1eec5b5f19d4" width="100%">글목록|
-|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/04f652c3-76f1-46d9-a383-4fe41bd062f3" width="100%">글작성|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/15f4ef89-61f7-47b1-a4e6-cea064c017a2" width="100%">글삭제|
-
-| |
-|:-:|
-|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/551f6e07-82d2-4521-b7c0-fe89f2bb0875" width="80%"> 
-글 상세보기_댓글X 본인글O|
-|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/47662b9c-d3eb-4e1e-8fac-ea36a81d70bf" width="80%"> 
-글 상세보기_댓글O 본인글X|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/4fabd0f0-5ddc-46be-92d0-1a15f3bdef81" width="100%">메인페이지|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/2b25b4e6-c332-4bc7-b6b9-156a03e1224d" width="100%">회원가입|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/d64ad494-e6e2-47e5-b2ab-2e1ec8183653" width="100%">회원가입 성공|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/8ef5062a-8b0b-4817-a34f-d2d2dad69ff2" width="100%">로그인|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/b207ddc2-0585-400f-a035-1eec5b5f19d4" width="100%">글목록|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/04f652c3-76f1-46d9-a383-4fe41bd062f3" width="100%">글작성|
+|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/15f4ef89-61f7-47b1-a4e6-cea064c017a2" width="100%">글삭제|<img src="https://github.com/hantang820/Django_Blog/assets/142385695/551f6e07-82d2-4521-b7c0-fe89f2bb0875" width="100%"> 글 상세보기|
 
 ## 5. 데이터베이스 모델링(ERD)
+
+<img src="https://github.com/hantang820/Django_Blog/assets/142385695/e15bf8fb-bf55-43b7-b44c-fea9a2927248" width="80%">
+
 ## 6. 기능
+ ### 6-1. 블로그 CRUD 기능
+#### 메인페이지
+- 로그인 전
+<img src="https://github.com/hantang820/Django_Blog/assets/142385695/42438640-bee9-497e-8860-f0de6c36562e" width="100%">
+- 로그인 후 
+<img src="https://github.com/hantang820/Django_Blog/assets/142385695/03742dc9-36aa-4308-9365-44a90cbf6a09" width="100%">
+
+#### 회원가입
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/78c018e2-b688-4a43-957f-bf2dc2644d08)
+
+#### 로그인
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/a42d1b55-3f65-4e5b-9565-ae498cdb6171)
+
+#### 게시글 작성
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/916eadce-bfda-4704-a0ca-c1fb74789a5c)
+
+#### 게시글 목록
+<img src="https://github.com/hantang820/Django_Blog/assets/142385695/468cca70-4d3e-46ca-8f18-89ac480a5d95" width="100%">
+
+- 글 목록에서 제목, 작성자, 작성일, 조회수 확인
+- 글에 댓글이 작성되었을 경우엔 제목 옆에 댓글의 수가 표시됨
+
+#### 게시글 상세보기
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/4f75df62-f190-421a-861e-6beb3ca11294)
+
+#### 게시글 수정
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/63bf760c-3e2e-4f45-b4e4-acdf302a963b)
+
+#### 게시글 삭제
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/9e316c39-4653-4549-8970-26f63cc13da5)
+- 게시글 삭제 확인을 위한 페이지에서 아니요를 누르면 글목록으로 돌아감
+
+#### 게시글 검색
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/14eaaefe-160a-4f36-8dec-0e8c60c2edb8)
+
+#### 같은 태그의 게시글 모아보기
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/40e460f9-00d0-4fca-b155-678cd0d7810d)
+- 글에 있는 태그를 눌러서 같은 태그를 가진 글들을 모아볼 수 있음
+
+### 6-2. 로그인/회원가입 기능을 이용하기
+
+#### 로그인을 한 사용자만 게시글 작성 가능
+![gif](https://github.com/hantang820/Django_Blog/assets/142385695/53debe8b-1d7a-413a-85ef-5af28d32b0c0)
+- 로그인 상태로 블로그에 접속해야 글 작성 버튼 활성화
+
+#### 본인이 작성한 게시글일 때만 수정/삭제 가능
+<img src="https://github.com/hantang820/Django_Blog/assets/142385695/1371a50c-8351-4beb-8dc5-82a72423c16e" width="100%">
+<img src="https://github.com/hantang820/Django_Blog/assets/142385695/36bf64ab-a929-496c-97b8-36ff564704cf" width="100%">
+
+- 본인이 작성한 글일 때만 수정/삭제 버튼 활성화
+
 ## 7. 개발하며 느낀 점 
+- Django를 사용해서 페이지를 개발하는 게 얼마나 편리한지 느낄 수 있었습니다. 또, 모르는 부분이 많아 그 편리함을 제대로 이용하지 못한다는 것이 답답하게 느껴질 때도 많았습니다. 좋은 기능을 잘 활용하기 위해서 더 많이 공부해야겠다는 생각을 하게 된 프로젝트였습니다. 
